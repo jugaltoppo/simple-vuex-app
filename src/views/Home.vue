@@ -70,6 +70,17 @@ export default {
     handleSubmit () {
       const payload = this.formData
       this.addPet(payload)
+      this.formData = {
+        name: '',
+        breed: '',
+        gender: '',
+        age: '',
+        color: '',
+        weight: '',
+        location: '',
+        notes: '',
+        species: ''
+      }
     }
   }
 }
