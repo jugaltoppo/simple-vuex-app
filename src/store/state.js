@@ -1,7 +1,8 @@
-import cats from '@/data/cats.js'
-import dogs from '@/data/dogs.js'
+import cat from '@/data/cats.js'
+import dog from '@/data/dogs.js'
 
 export default {
-  cats,
-  dogs
+  cat,
+  dog,
+  pets: [...cat, ...dog]
 }

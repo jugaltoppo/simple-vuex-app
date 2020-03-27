@@ -9,7 +9,7 @@
                 <th>Weight</th>
             </thead>
             <tbody>
-              <tr v-for="(dog, index) in dogs" :key="index">
+              <tr v-for="(dog, index) in dog" :key="index">
                 <td><router-link :to="`/pets/dogs/${index}`">{{ dog.name }}</router-link></td>
                 <td>{{ dog.breed }}</td>
                 <td>{{ dog.color }}</td>
@@ -29,7 +29,7 @@ export default {
   },
   computed: {
     ...mapState([
-      'dogs'
+      'dog'
     ])
   }
 }

@@ -1,13 +1,15 @@
 <template>
   <div class="home">
+    <p>There is currently {{ getCats.length }} cats</p>
+    <p>There is currently {{ getDogs.length }} dogs</p>
     <h1>Adopt a new best friend</h1>
     <button @click="toggler">Add new pet</button>
     <form v-if="toggleForm" @submit.prevent="handleSubmit">
       <br>
       <label for="species">Select species</label>
       <select id="species" v-model="formData.species">
-        <option value="cats">Cats</option>
-        <option value="dogs">Dogs</option>
+        <option value="cat">Cat</option>
+        <option value="dog">Dog</option>
       </select>
       <label for="name">Name</label>
       <input id="name" v-model="formData.name">
@@ -41,7 +43,7 @@
 
 <script>
 // @ is an alias to /src
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'Home',
   data () {
@@ -59,6 +61,12 @@ export default {
         species: ''
       }
     }
+  },
+  computed: {
+    ...mapGetters([
+      'getCats',
+      'getDogs'
+    ])
   },
   methods: {
     ...mapActions([

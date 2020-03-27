@@ -22,8 +22,8 @@ export default {
   },
   computed: {
     ...mapState([
-      'cats',
-      'dogs'
+      'cat',
+      'dog'
     ])
   },
   mounted () {
